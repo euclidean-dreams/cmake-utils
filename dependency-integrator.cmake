@@ -14,5 +14,5 @@ function(integrate_cmake_dependency)
     execute_process(
             COMMAND "${CMAKE_COMMAND}" --build .
             WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/${DEPENDENCY_NAME}-download")
-    add_subdirectory(${CMAKE_BINARY_DIR}/${DEPENDENCY_NAME}-src ${CMAKE_BINARY_DIR}/${DEPENDENCY_NAME}-build)
+    add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/${DEPENDENCY_NAME}-src ${CMAKE_BINARY_DIR}/${DEPENDENCY_NAME}-build)
 endfunction()
