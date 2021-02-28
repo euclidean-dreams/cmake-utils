@@ -6,7 +6,7 @@ function(integrate_cmake_dependency)
     SET(MULTI_VALUE_ARGS)
     cmake_parse_arguments(DEPENDENCY "${OPTIONS}" "${SINGLE_VALUE_ARGS}" "${MULTI_VALUE_ARGS}" ${ARGN})
 
-    configure_file(cmake/dependency-downloader.cmake ${DEPENDENCY_NAME}-download/CMakeLists.txt)
+    configure_file(lib/cmake-utils/dependency-downloader.cmake ${DEPENDENCY_NAME}-download/CMakeLists.txt)
     execute_process(
             COMMAND "${CMAKE_COMMAND}" -G "${CMAKE_GENERATOR}" .
             WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/${DEPENDENCY_NAME}-download"
